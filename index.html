@@ -320,16 +320,70 @@
           </div>
         </div>
       </section>
+      <section class="footer-subscribe">
+        <h2 class="footer-links-header">подпишись на рассылку</h2>
+        <div class="footer-form">
+          <form class="email-form">
+            <input type="mail" placeholder="E-mail" class="email-input">
+            <button type="submit" class="email-submit">Подписаться
+              <svg width="24px" height="24px">
+                <use href="images/icons.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   </footer>
+  <!-- BACKDROP IS HERE -->
   <div class="backdrop is-hidden" data-modal>
     <div class="modal">
       <button type="button" class="modal-image" data-modal-close>
         <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15 4.108 13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108Z" />
+          <use href="images/icons.svg#icon-close-black-18dp-2-1"></use>
         </svg>
       </button>
+      <!-- MODAL WINDOW IS HERE -->
+      <section class="backdrop-form">
+        <h2 class="backdrop-header">Оставьте свои данные, мы вам перезвоним</h2>
+        <div class="form form-name">
+          <label for="backdrop-name">Имя</label>
+          <div class="backdrop-container">
+            <svg class="backdrop-icon" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <use href="images/icons.svg#icon-person-black-18dp-1"></use>
+            </svg>
+            <input type="text" name="data" id="backdrop-name" class="backdrop-name">
+          </div>
+        </div>
+        <div class="form form-phone">
+          <label for="backdrop-phone">Телефон</label>
+          <div class="backdrop-container">
+            <svg class="backdrop-icon" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <use href="images/icons.svg#icon-phone-black-18dp-1"></use>
+            </svg>
+            <input type="tel" name="data" id="backdrop-phone" class="backdrop-name">
+          </div>
+        </div>
+        <div class="form form-mail">
+          <label for="backdrop-mail">Почта</label>
+          <div class="backdrop-container">
+            <svg class="backdrop-icon" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <use href="images/icons.svg#icon-email-black-18dp-1"></use>
+            </svg>
+            <input type="email" name="data" id="backdrop-mail" class="backdrop-name">
+          </div>
+        </div>
+        <div class="form form-textarea">
+          <label for="backdrop-textarea">Комментарий</label>
+          <textarea name="data" id="backdrop-textarea" cols="60" rows="6.5" placeholder="Введите текст"
+            class="backdrop-name"></textarea>
+        </div>
+        <div class="form-checkbox">
+          <input type="checkbox" name="data" id="backdrop-checkbox">
+          <label for="backdrop-checkbox">Соглашаюсь с рассылкой и принимаю <a href="#"> Условия договора</a></label>
+        </div>
+        <button type="submit" class="form-submit">Отправить</button>
+      </section>
     </div>
   </div>
   <script src="./js/modal.js"></script>
