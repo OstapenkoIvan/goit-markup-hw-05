@@ -41,7 +41,7 @@ body {
 a {
   font-family: var(--ff-2);
   text-decoration: none;
-  color: var(--clr-font-1);
+  color: inherit;
   font-weight: 500;
   line-height: 1.143;
 }
@@ -109,7 +109,8 @@ header {
   font-weight: 500;
 }
 
-.header-btn {
+.header-btn,
+.header-btn a {
   position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -129,15 +130,11 @@ header {
   border-radius: 4px;
 }
 
-/* .header-btn:hover::after {
-  width: 100%;
-} */
-
 .nav-active {
   color: var(--clr-active-1);
 }
 
-.nav-active.header-btn::after {
+.header-btn.nav-active::after {
   width: 100%;
 }
 
@@ -159,9 +156,13 @@ header {
 }
 
 .header-contact:hover,
-.header-btn:hover,
+.header-contact:focus,
+.header-btn a:hover,
+.header-btn a:focus,
 .footer-contact:hover,
-.header-contact:hover .contact-icon {
+.footer-contact:focus,
+.header-contact:hover .contact-icon,
+.header-contact:focus .contact-icon {
   color: var(--clr-active-1);
   fill: var(--clr-active-1);
 }
@@ -225,12 +226,22 @@ header {
 
 /* section two */
 
+.hide {
+  display: none;
+}
+
+.section-two {
+  padding-top: var(--section-margin);
+}
+
+.section-two + .section-two {
+  padding-bottom: var(--section-margin);
+}
+
 .section-two-list {
   display: flex;
   flex-basis: calc((100%-90px) / 4);
   justify-content: center;
-  margin-top: var(--section-margin);
-  margin-bottom: var(--section-margin);
 }
 
 .section-two-container {
@@ -270,8 +281,6 @@ li h3 {
 
 .section-two-images {
   display: flex;
-  /* justify-content: center; */
-  margin-bottom: var(--section-margin);
 }
 
 .section-two-images li:not(:last-child) {
@@ -408,7 +417,7 @@ li h3 {
   fill: var(--clr-active-1);
 }
 
-/* footer */
+/* FOOTER */
 
 footer {
   height: 252px;
@@ -427,22 +436,15 @@ footer {
   color: var(--clr-font-3);
 }
 
-.footer-address {
+.footer-contact {
+  color: var(--clr-font-4);
+  font-style: normal;
   line-height: 1.71;
   font-weight: 400;
 }
 
 .footer-street {
   color: var(--clr-font-3);
-  margin-bottom: 9px;
-  line-height: 1.71;
-  font-weight: 400;
-}
-
-.footer-contact {
-  color: var(--clr-font-4);
-  line-height: 1.71;
-  font-weight: 400;
 }
 
 .footer-list-item:not(:last-child) {
@@ -475,7 +477,7 @@ footer {
   border-radius: 50%;
 }
 
-/* FOOTER SUBMSCRIBE FORM */
+/* FOOTER SUBSCRIBE FORM */
 .footer-subscribe {
   margin-left: 94px;
   margin-top: 12px;
@@ -524,7 +526,8 @@ footer {
 
 /* Portfolio items */
 
-.main-buttons-container {
+.main-items {
+  padding-bottom: var(--section-margin);
   padding-top: var(--section-margin);
 }
 
@@ -550,15 +553,11 @@ footer {
 }
 
 .main-button:hover,
-.main-button:active {
+.main-button:focus {
   color: var(--clr-font-3);
   background-color: var(--clr-active-1);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
-.main-items {
-  padding-bottom: var(--section-margin);
 }
 
 .main-item-list {
@@ -590,11 +589,13 @@ footer {
 
 /* ITEM HOVER EFFECTS */
 
-.item:hover .item-overlay-container {
+.item:hover .item-overlay-container,
+.item:focus .item-overlay-container {
   transform: translateY(0);
 }
 
-.item:hover {
+.item:hover,
+.item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -632,6 +633,7 @@ footer {
   letter-spacing: 0.06em;
   margin-left: 24px;
   margin-bottom: 4px;
+  text-transform: uppercase;
 }
 .item-text {
   color: var(--clr-font-2);
@@ -690,7 +692,8 @@ footer {
   fill: var(--clr-font-1);
 }
 
-.modal-image:hover {
+.modal-image:hover,
+.modal-image:focus {
   fill: var(--clr-active-1);
 }
 
@@ -724,11 +727,13 @@ footer {
   fill: currentColor;
 }
 
-.form:hover .backdrop-icon {
+.form:hover .backdrop-icon,
+.form:focus .backdrop-icon {
   fill: var(--clr-active-1);
 }
 
-.form:hover .backdrop-name {
+.form:hover .backdrop-name,
+.form:focus .backdrop-name {
   outline: 1px solid var(--clr-active-1);
 }
 
@@ -736,7 +741,8 @@ footer {
   outline: 1px solid var(--clr-active-1);
 }
 
-.form:hover .form input {
+.form:hover .form input,
+.form:focus .form input {
   border: 1px solid #2196f3;
 }
 
@@ -801,6 +807,7 @@ footer {
   border: none;
 }
 
-.form-submit:hover {
+.form-submit:hover,
+.form-submit:focus {
   background-color: var(--clr-hover-2);
 }
